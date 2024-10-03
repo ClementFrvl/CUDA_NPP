@@ -1,42 +1,58 @@
-# CUDAEnterpriseProject - CUDA NPP Filtering Lab
+# CUDA NPP Filtering Lab
 
-## Project Description
+## Project Overview
 
-This project was created as a playground for investigating various filtering and image processing capabilities of the CUDA NPP Library.
-Currently, the project provides an implementation of the following filters:
- * Canny Edge Detection Filter (aka. canny);
- * Sobel Edge Detection Filter (aka. sobel);
- * Gauss Smooth Filter  (aka. gauss);
- * Sharpening Filter  (aka. sharpen).
- 
- The project allows to choose the input image file in BMP or PGM format, specify the needed filter and provide the filename or directory for the output file.
- Currently, the project allows processing only one image, since there is a problem with NPP kernel execution, which fails when you try to run the same kernel again.
- The project requires a Coursera Lab environment to execute since it provides the configured CUDA environment and doesn't require additional configuration, which currently is out of the scope of this project.
- 
- The project structure follows the template from https://github.com/PascaleCourseraCourses/CUDAatScaleForTheEnterpriseCourseProjectTemplate.
+This project serves as a sandbox for exploring the filtering and image processing capabilities provided by the CUDA NPP (NVIDIA Performance Primitives) Library. It currently implements several well-known filters, including:
 
-## Code Organization
+- **Canny Edge Detection Filter** (`canny`)
+- **Sobel Edge Detection Filter** (`sobel`)
+- **Gaussian Smoothing Filter** (`gauss`)
+- **Sharpening Filter** (`sharpen`)
 
-```bin/```
-This folder should hold all binary/executable code that is built automatically or manually. Executable code should have use the .exe extension or programming language-specific extension.
+The program allows users to apply one of these filters to an image (in BMP or PGM format), specifying both the filter and the output file or directory for the processed image. 
 
-```data/```
-This folder should hold all example data in any format. If the original data is rather large or can be brought in via scripts, this can be left blank in the respository, so that it doesn't require major downloads when all that is desired is the code/structure.
+At present, the application processes only one image at a time due to an issue with NPP kernel execution, which fails when attempting to rerun the same kernel multiple times.
 
-```lib/```
-Any libraries that are not installed via the Operating System-specific package manager should be placed here, so that it is easier for inclusion/linking.
+The project is designed to be executed within a Coursera Lab environment, where the required CUDA setup is pre-configured. For now, additional environment configuration falls outside the scope of this project.
 
-```src/```
-The source code should be placed here in a hierarchical fashion, as appropriate.
+## Project Structure
 
-```README.md```
-This file should hold the description of the project so that anyone cloning or deciding if they want to clone this repository can understand its purpose to help with their decision.
+```
+bin/
+```
+Contains all the binary/executable files generated during the build process. Executables will follow the `.exe` extension or an appropriate extension based on the programming language.
 
-```INSTALL```
-This file should hold the human-readable set of instructions for installing the code so that it can be executed. If possible it should be organized around different operating systems, so that it can be done by as many people as possible with different constraints.
+```
+data/
+```
+Houses sample input data files (images) in any supported format. For large datasets, this directory may be left empty, with scripts or instructions provided to download the necessary files.
 
-```Makefile or CMAkeLists.txt or build.sh```
-There should be some rudimentary scripts for building your project's code in an automatic fashion.
+```
+lib/
+```
+Includes any external libraries that are not installed through the system's package manager, ensuring that all dependencies are easily accessible for linking or inclusion.
 
-```run.sh```
-An optional script used to run your executable code, either with or without command-line arguments.
+```
+src/
+```
+Contains the project's source code, structured hierarchically as needed.
+
+```
+README.md
+```
+This file provides an overview of the project, helping potential users or contributors quickly understand its purpose and scope.
+
+```
+INSTALL
+```
+Contains detailed instructions on how to install and configure the project. It should cover installation steps for multiple operating systems if applicable, to maximize accessibility.
+
+```
+Makefile`
+```
+Provides scripts for building the project automatically, depending on the system's preferred build tools.
+
+```
+run.sh
+```
+(Optional) A script for running the compiled executable, with or without additional command-line arguments.
